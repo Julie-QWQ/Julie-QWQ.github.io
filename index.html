@@ -9,31 +9,168 @@
     <link rel="stylesheet"  href="styles/style.css" />
     <link rel="icon"        href="images/icon.ico" />
 
+    <script href="scripts/main.js" defer> </script>
 </head>
 
 <body>
-    <h1>This is Julie's Huffman Encoding Web-Station!</h1>
+    <header>
+        <h1> This is Julie's Huffman Encoding Web-Station! </h1>
+    </header>
 
-    <div>
-        <button>
-            <a href="https://github.com/Julie-QWQ/HuffmanCodingSystem" title="Julie's great work!" target="_blank">
-                click to see Julie's Huffman-Coding-Application
-            </a>
-        </button>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li><a href="sites/encode.html">Encode</a></li>
+            <li><a href="sites/inspect.html">Inspect</a></li>
+            <li><a href="sites/decode.html">Decode</a></li>
+            <li><a href="sites/socket.html">Socket</a></li>
+        </ul>
+    </nav>
 
-        <button>
-            <a href="resources/Julie'setup.exe" download="Julie's HuffCode.exe">
-                download Julie's Huffman-Coding-Application
-            </a>
-        </button>
-    </div>
+    <main>
+        <!-- <hr> -->
+        <section>
+            <h2>项目简介</h2>
+            <p>本项目旨在开发一款
+                功能完整、界面友好、用户体验良好的
+                哈夫曼编码与译码系统。
+                该系统以哈夫曼最优树算法为核心，
+                同时集成了多种实用功能，
+                是一款轻量级小型桌面应用程序。</p>
+            <p>本项目的目标包括：<br>
+                在项目开发过程中，
+                不断熟练掌握C++工具的使用，
+                强化运用数据结构的能力，
+                提升算法分析设计的技巧，
+                同时学习并上手GUI的设计与制作，
+                积累小型工程项目的实践经验。</p>
+            <p>本项目全部使用C++语言进行编写，
+                并采用业界广泛使用的Qt框架进行GUI制作。
+                本项目主要使用
+                线性表、
+                堆（优先队列）、
+                二叉搜索树、
+                哈希等数据结构，
+                主要应用哈夫曼编码等算法。</p>
+        </section>
+        <!-- <hr> -->
+        <section>
+            <h2>项目需求</h2>
+            <p>根据《2023 专业实训题目及要求》的基本要求，
+                项目主要分为四大功能模块：</p>
+            <ul>
+                <li>编码模块</li>
+                <li>解码模块</li>
+                <li>可视化模块</li>
+                <li>通信模块</li>
+            </ul>
+            <p>其中，编码模块的主要需求为：
+            读入原文、
+            字频统计、
+            构造哈夫曼树、
+            得到各字符的编码、
+            计算编码后的序列。</p>
+            <p>解码模块的主要需求为：
+            读入编码后的序列、
+            解码、
+            校验。</p>
+            <p>可视化模块的主要需求为：
+            可视化显示哈夫曼树、
+            可视化动态构建哈夫曼树。</p>
+            <p>通信模块的主要需求为：
+            发送编码、
+            接收编码后的序列。</p>
+            <p>为了使项目更可靠及人性化，需要进一步细化需求。</p>
+            <h3>编码模块</h3>
+            <dl>
+                <dt>读入原文</dt>
+                <dd>除了手动输入文本方面，
+                    还需要加入文件导入功能，
+                    以简化输入功能并提高输入效率。</dd>
+                <dt>字频统计</dt>
+                <dd>系统需要统计各字符出现的频率，
+                    并显示在屏幕上。</dd>
+                <dt>得到各字符的编码</dt>
+                <dd>系统需要在屏幕上展示哈夫曼编码生成的编码表；
+                    此外，还可以提供字符的编码查询功能。</dd>
+                <dt>计算编码后的序列</dt>
+                <dd>系统需要在屏幕上展示哈夫曼编码后得到的0-1序列；
+                    对于大批量的文字输入，需要考虑使用多线程提高效率，避免卡顿；
+                    考虑导出编码信息的功能，以记录各次编码的日志信息。</dd>
+            </dl>
+            <h3>解码模块</h3>
+            <dl>
+                <dt>读入编码后的序列</dt>
+                <dd>与编码模块类似，除了手动输入文本方面，还需要加入文件导入功能。</dd>
+                <dt>解码</dt>
+                <dd>与编码模块类似，考虑导出译码信息的功能，以记录各次编码的日志信息。</dd>
+            </dl>
+            <h3>可视化模块</h3>
+            <dl>
+                <dt>可视化显示哈夫曼树</dt>
+                <dd>树的节点上应当标注有节点的信息，
+                    包括代表的字符、权值等信息；
+                    树的显示要合适且美观，
+                    不允许节点重叠，
+                    最好能允许拖拽与缩放。</dd>
+                <dt>动态构建哈夫曼树</dt>
+                <dd>用户可以手动控制哈夫曼树逐步构建的过程，
+                    观察哈夫曼树是如何一步步地构建起来的。</dd>
+            </dl>
+            <h3>通信模块</h3>
+            <dl>
+                <dt>发送编码</dt>
+                <dd>要能够向指定IP的用户发送编码后的信息；
+                    能够显示消息的发送状态，
+                    包括消息是否发送成功、发送失败的原因等。</dd>
+                <dt>接收编码后的序列</dt>
+                <dd>要能够对接收到的信息进行解码并显示；
+                    对于接收到大量消息的情况，
+                    又要创建一个消息队列（列表）存储消息的内容和发送端的信息；
+                    要能够实现全自动解码，即一接受到消息就自动进行解码。</dd>
+                <dt>其他</dt>
+                <dd>要能够显示本机的IP、端口号等网络通信参数。</dd>
+            </dl>
+            <h3>GUI设计</h3>
+            <ul>
+                <li>界面要美观且人性化</li>
+                <li>合理设计按钮等组件之间的相互影响</li>
+                <li>要考虑到用户的不合法操作，对其进行处理</li>
+            </ul>
 
-    <div>
-        <button class="main_buttons">Encoding</button>
-        <button class="main_buttons">Pattern</button>
-        <button class="main_buttons">Decoding</button>
-        <button class="main_buttons">Socket</button>
-    </div>
-
+        </section>
+        <!-- <hr> -->
+        <section>
+            <h2>总结与学习</h2>
+            <p>经过本次专业基础实训，我的专业技能得到了夯实和提高。</p>
+            <p>首先，我的编程能力也得到极大的提升。
+                这个项目包含6各头文件，11个源文件；
+                仅源文件就有约一千行代码。
+                通过这个项目，我熟练了C++的面向对象编程，
+                对类的设计方式也有所领悟。
+                第一次做这么大的项目，
+                我学会了打断点、单步调试等实用方法。
+                另外，我还提高了数据结构的设计能力和算法分析能力。</p>
+            <p>第二，我领悟到要善于利用学习工具，如各种学习网站和AI工具。
+                通过这些工具，我快速入门了Qt这个工具。
+                不过，我始终觉得AI是一把双刃剑，
+                我看到许多人用AI生成了绝大部分的代码，而自己只写了20%不到。
+                我认为AI应当只作为辅助工具和工具手册使用；
+                最好在已经能够熟练运用某种技术的基础上，
+                再考虑使用AI以省去重复工作。</p>
+            <p>第三，我了解到帮助文档的强大之处。
+                Qt拥有一个强大的帮助文档，
+                里面提供了各种类库的使用方法。
+                同样的，在学习其他技术框架的过程中，阅读官方文档总是一个很好的办法。
+                比如Vue之类的前端框架，其官方就提供了强大的文档以供学习。</p>
+            <p>最后，感谢大家的观看！</p>
+        </section>
+        <!-- <hr> -->
+    </main>
+    
+    <footer>
+        ©2077 Julie
+    </footer>
+    
 </body>
 </html>
